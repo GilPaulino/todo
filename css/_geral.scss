@@ -1,0 +1,60 @@
+$purple: #8284fa;
+$purple-dark: #5e60ce;
+$blue: #4ea8de;
+$blue-dark: #1e6f9f;
+$gray700: #0d0d0d;
+$gray600: #1a1a1a;
+$gray500: #262626;
+$gray400: #333333;
+$gray300: #808080;
+$gray200: #d9d9d9;
+$gray100: #f2f2f2;
+$danger: #e25858; 
+
+.container {
+    background: $gray700;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;    
+}
+
+.page-header{
+    margin-top: 0px;
+}
+
+h1{
+    color: $blue;
+    
+}
+
+img {
+    width: 20px;
+    height: 25px;
+}
+
+img, h1 {
+    display: inline-block;    
+}
+
+.nome {
+    display: inline-block;
+    color: $gray300 ;
+    background-color: $gray400;
+    border-color: $gray700;
+    height: 35px;
+    left: 0px;
+    margin-top: 10px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.cadastrar {
+    height: 39px;
+    border-radius: 10px;
+    border-color: none;
+    background: $blue-dark;
+    color: white;
+    margin-left: -4px;
+}

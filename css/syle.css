@@ -1,0 +1,46 @@
+.container {
+  background: #0d0d0d;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.page-header {
+  margin-top: 0px;
+}
+
+h1 {
+  color: #4ea8de;
+}
+
+img {
+  width: 20px;
+  height: 25px;
+}
+
+img, h1 {
+  display: inline-block;
+}
+
+.nome {
+  display: inline-block;
+  color: #808080;
+  background-color: #333333;
+  border-color: #0d0d0d;
+  height: 35px;
+  left: 0px;
+  margin-top: 10px;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.cadastrar {
+  height: 39px;
+  border-radius: 10px;
+  border-color: none;
+  background: #1e6f9f;
+  color: white;
+  margin-left: -4px;
+}/*# sourceMappingURL=syle.css.map */
