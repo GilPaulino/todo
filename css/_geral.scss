@@ -11,22 +11,25 @@ $gray200: #d9d9d9;
 $gray100: #f2f2f2;
 $danger: #e25858; 
 
-.container {
-    background: $gray700;
+.container {   
+    background-image: linear-gradient(to bottom, $gray700 0, $gray700 30%, $gray500 30%);
+    width: 100%;
+    height: 23rem;
     text-align: center;
     display: block;
     margin-left: auto;
-    margin-right: auto;
-    width: 100%;    
+    margin-right: auto;       
 }
 
-.page-header{
-    margin-top: 0px;
+.titulo{
+    color: $blue;    
+}
+.titulo-2{
+    color: $purple-dark;
 }
 
-h1{
-    color: $blue;
-    
+ h1, p{
+    font-weight: bold;
 }
 
 img {
@@ -46,15 +49,33 @@ img, h1 {
     height: 35px;
     left: 0px;
     margin-top: 10px;
-    width: 80%;
-    border-radius: 10px;
+    width: 50%;
+    border-radius: 5px;
 }
 
-.cadastrar {
-    height: 39px;
-    border-radius: 10px;
+
+.cadastrar {   
+    height: 41px;
+    border-radius: 5px;
     border-color: none;
     background: $blue-dark;
     color: white;
     margin-left: -4px;
+}
+
+
+.tarefas{
+    color: $blue;
+    float: left;
+    width: 54%;
+}
+
+.concluidas{
+    color:$purple-dark;
+    float: right;
+    width: 46%;    
+}
+
+li{
+    list-style: none;
 }

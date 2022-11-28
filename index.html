@@ -9,21 +9,29 @@
     <title>ToDo List</title>
 </head>
 <body>
-    <section>
-        <div class="container">
-            <img src="img/icone.png.png" alt="">
-            <h1 class="titulo">todo</h1> <br>
-        </div>
-    </section>
-    <div class="page-header">
-        <form action="" class="head" class="" id="novaTarefa">
-            <div class="formulario"><input type="text" class="nome" class="estilo-text" id="nome"
-                    placeholder="Adicione uma nova tarefa">
+    <div class="container">
+        <img src="img/icone.png.png" alt="Icon">
+        <h1 class="titulo">to<h1 class="titulo-2">do</h1>
+        </h1>
+    
+        <div class="formulario">
+            <form action="" class="head" id="nova-tarefa">
+                <input type="text" class="nome" id="nome" placeholder="Adicione uma nova tarefa">
                 <input type="submit" value="Criar" class="cadastrar" class="button" class="estilo-input">
-            </div>
+            </form>
+        </div>
+        <div class="contador">
+            <p class="tarefas">Tarefas criadas
+            <p class="concluidas">Concluídas</p>
+            </p>
+            
+            <ul class="lista" id="lista">
+                <li class="tarefa"><input type="checkbox" name="check" id="check"></li>                             
+            </ul>
+                          
+        </div>
     </div>
-    </form>
-    </div>
-   
+
+    <script src="main.js"></script>
 </body>
 </html>
