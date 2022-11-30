@@ -31,30 +31,28 @@ form.addEventListener("submit", (evento) =>{
 
 function criaTarefa(item){
     
-    const novaTarefa = document.createElement('li')
+    const novaTarefa = document.createElement('div')
     novaTarefa.classList.add("tarefa")
-    novaTarefa.innerHTML = item.nome
-    novaTarefa.dataset.id = item.id
 
-    novaTarefa.appendChild(botaoDeleta(item.id))
+    const textoTarefa = document.createElement('p')
+    textoTarefa.classList.add('textoTarefa')
+    textoTarefa.innerHTML = item.nome
+    textoTarefa.dataset.id = item.id
+      
+    textoTarefa.appendChild(botaoDeleta(item.id))
     
-    lista.appendChild(novaTarefa)   
+    lista.appendChild(textoTarefa)   
 }
 
-const buttonTrash = document.createElement('i')
-buttonTrash.classList.add("far")
-buttonTrash.classList.add("fa-trash-alt")
-
 function botaoDeleta(id) {
-    const botao = document.createElement("button")
+    const deleteItem = document.createElement('i')
+    deleteItem.classList.add('fa-regular')
+    deleteItem.classList.add('fa-trash-can')
 
-    
-    botao.innerText = 'x'
-
-    botao.addEventListener("click", function(){
+    deleteItem.addEventListener("click", function(){
         deletaTarefa(this.parentNode, id)
     })
-    return botao
+    return deleteItem
 }
 
 function deletaTarefa(tag, id){

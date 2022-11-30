@@ -9,21 +9,24 @@ $gray400: #333333;
 $gray300: #808080;
 $gray200: #d9d9d9;
 $gray100: #f2f2f2;
-$danger: #e25858; 
+$danger: #e25858;
+
 
 body{
+    width: 100vw;   
     height: 100vh;
-    background: $gray700;
+    background-image: linear-gradient(to bottom, $gray700 0, $gray700 30%, $gray600 30%);
+    font-family: "Inter", sans-serif;
 }
 
-.container {   
-    //background-image: linear-gradient(to bottom, $gray700 0, $gray700 30%, $gray500 30%);
-    width: 100%;
+.container {       
+    width: 50%;
     height: 23rem;
     text-align: center;
     display: block;
     margin-left: auto;
-    margin-right: auto;       
+    margin-right: auto;
+    min-width: 500px;
 }
 
 .titulo{
@@ -47,33 +50,48 @@ img, h1 {
     display: inline-block;    
 }
 
-.nome {
-    display: inline-block;
-    color: $gray300 ;
-    background-color: $gray400;
-    border-color: $gray700;
-    height: 35px;
-    left: 0px;
-    margin-top: 10px;
-    width: 50%;
+i{
+    cursor: pointer;
+    color: $gray300;
+}
+
+i:focus{
+    background-color: $gray700;
+    color: $danger;
+}
+
+.nome{    
+    font-size: 16px;
+    border: 2px solid $gray700;
     border-radius: 5px;
+    padding: 8px;    
+    font-weight: 500;
+    background-color: $gray500;
+    color: $gray300;
+}
+
+.nome:focus{
+    outline: none;
+    border-color: $gray400;
+    background: $gray400;
 }
 
 .cadastrar {   
-    height: 41px;
     border-radius: 5px;
-    border-color: none;
-    background: $blue-dark;
-    color: white;
-    margin-left: -4px;
-    padding: auto;
-    cursor: pointer;    
+    font-weight: 500;
+    height: 100%;
+    background-color: $blue-dark;
+    color: white;   
+    font-size: 16px;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
 }
 .cadastrar:hover{
     background: $blue;    
 }
 
-.tarefas{
+.tarefas-criadas{
     color: $blue;
     float: left;
     width: 54%;
@@ -85,12 +103,21 @@ img, h1 {
     width: 46%;    
 }
 
-li{
-    list-style: none;
-    color: $gray200;
+.lista{
+    font-family: 'Inter';
+    background-color: $gray500;
+    padding: 10px 20px;    
+    border-radius: 5px;
+    box-shadow: 0 5px 5px, $gray500;
+    display: flex;
+    color: $gray200;   
 }
 
-button{   
-    cursor: pointer;
+.tarefa{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    margin-top: 6px;
 }
 

@@ -1,14 +1,18 @@
 body {
-  background: #0d0d0d;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #0d0d0d 0, #0d0d0d 30%, #1a1a1a 30%);
+  font-family: "Inter", sans-serif;
 }
 
 .container {
-  width: 100%;
+  width: 50%;
   height: 23rem;
   text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  min-width: 500px;
 }
 
 .titulo {
@@ -32,26 +36,41 @@ img, h1 {
   display: inline-block;
 }
 
-.nome {
-  display: inline-block;
+i {
+  cursor: pointer;
   color: #808080;
-  background-color: #333333;
-  border-color: #0d0d0d;
-  height: 35px;
-  left: 0px;
-  margin-top: 10px;
-  width: 50%;
+}
+
+i:focus {
+  background-color: #0d0d0d;
+  color: #e25858;
+}
+
+.nome {
+  font-size: 16px;
+  border: 2px solid #0d0d0d;
   border-radius: 5px;
+  padding: 8px;
+  font-weight: 500;
+  background-color: #262626;
+  color: #808080;
+}
+
+.nome:focus {
+  outline: none;
+  border-color: #333333;
+  background: #333333;
 }
 
 .cadastrar {
-  height: 41px;
   border-radius: 5px;
-  border-color: none;
-  background: #1e6f9f;
+  font-weight: 500;
+  height: 100%;
+  background-color: #1e6f9f;
   color: white;
-  margin-left: -4px;
-  padding: auto;
+  font-size: 16px;
+  border: none;
+  padding: 8px;
   cursor: pointer;
 }
 
@@ -59,7 +78,7 @@ img, h1 {
   background: #4ea8de;
 }
 
-.tarefas {
+.tarefas-criadas {
   color: #4ea8de;
   float: left;
   width: 54%;
@@ -71,11 +90,20 @@ img, h1 {
   width: 46%;
 }
 
-li {
-  list-style: none;
+.lista {
+  font-family: "Inter";
+  background-color: #262626;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px, #262626;
+  display: flex;
   color: #d9d9d9;
 }
 
-button {
-  cursor: pointer;
+.tarefa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  margin-top: 6px;
 }/*# sourceMappingURL=syle.css.map */
