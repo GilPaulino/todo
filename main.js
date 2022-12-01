@@ -32,17 +32,40 @@ form.addEventListener("submit", (evento) =>{
 function criaTarefa(item){
     
     const novaTarefa = document.createElement('div')
-    novaTarefa.classList.add("tarefa")
-
-    const textoTarefa = document.createElement('p')
-    textoTarefa.classList.add('textoTarefa')
-    textoTarefa.innerHTML = item.nome
-    textoTarefa.dataset.id = item.id
-      
-    textoTarefa.appendChild(botaoDeleta(item.id))
+    novaTarefa.classList.add("tarefa")  
     
-    lista.appendChild(textoTarefa)   
+    const textoTarefa = document.createElement('p')   
+    textoTarefa.innerHTML = item.nome
+    textoTarefa.dataset.id = item.id  
+
+    const deleteItem = document.createElement('i')
+    deleteItem.classList.add('fa-regular')
+    deleteItem.classList.add('fa-trash-can') 
+
+    const checked = document.getElementById('checkBox')
+
+    lista.appendChild(novaTarefa)
+    novaTarefa.innerHTML = `<input type="checkbox" class="checkItem" id="checkBox">` 
+    //novaTarefa.appendChild(marked(checked))    
+    novaTarefa.appendChild(textoTarefa)
+    novaTarefa.appendChild(botaoDeleta(deleteItem))         
 }
+
+/*function checkItem(id) {
+    const checked = document.getElementById('checkBox')
+
+    checked.addEventListener("click", function(){
+        marked(this.parentNode, id)
+    })
+    return checked
+}
+
+function marked(tag,id){
+    tag.remove()
+    itens.status(itens.findIndex(elemento => elemento.id ===id), 1)
+
+    localStorage.setItem("itens", JSON.stringify(itens))
+}*/
 
 function botaoDeleta(id) {
     const deleteItem = document.createElement('i')
@@ -52,6 +75,7 @@ function botaoDeleta(id) {
     deleteItem.addEventListener("click", function(){
         deletaTarefa(this.parentNode, id)
     })
+
     return deleteItem
 }
 

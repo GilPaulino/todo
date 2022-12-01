@@ -13,9 +13,12 @@ $danger: #e25858;
 
 
 body{
-    width: 100vw;   
-    height: 100vh;
-    background-image: linear-gradient(to bottom, $gray700 0, $gray700 30%, $gray600 30%);
+    height: 200px;
+    width: 1440px;
+    background: $gray700;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;   
     font-family: "Inter", sans-serif;
 }
 
@@ -50,15 +53,6 @@ img, h1 {
     display: inline-block;    
 }
 
-i{
-    cursor: pointer;
-    color: $gray300;
-}
-
-i:focus{
-    background-color: $gray700;
-    color: $danger;
-}
 
 .nome{    
     font-size: 16px;
@@ -81,13 +75,19 @@ i:focus{
     font-weight: 500;
     height: 100%;
     background-color: $blue-dark;
-    color: white;   
-    font-size: 16px;
+    color: $gray100;   
+    font-size: 14px;
     border: none;
     padding: 8px;
     cursor: pointer;
 }
-.cadastrar:hover{
+
+.plus{
+    color: $gray100;
+    font-size: 14px; 
+}
+
+.cadastrar:hover {
     background: $blue;    
 }
 
@@ -105,19 +105,64 @@ i:focus{
 
 .lista{
     font-family: 'Inter';
-    background-color: $gray500;
-    padding: 10px 20px;    
+    
+    padding: 10px 20px; 
+    margin-top: 60px;   
     border-radius: 5px;
     box-shadow: 0 5px 5px, $gray500;
-    display: flex;
-    color: $gray200;   
+    width: 100%;
+    color: black;   
 }
 
-.tarefa{
+.tarefa{   
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6px;
-    margin-top: 6px;
+    border-radius: 8px;
+    width: 736px;
+    height: 72px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    background-color: $gray500;
 }
 
+
+
+.tarefa p{    
+    color: $gray100;
+    font-size: 14px;
+
+}
+
+.tarefa i{
+    cursor: pointer;
+    background-color: $gray500;
+    color: $gray300;
+    padding: 7px;  
+    margin-right: 20px;      
+}
+
+.tarefa i:hover{
+    background-color: $gray600;
+    color: $danger;
+    padding: 7px;
+    border-radius: 5px;    
+}
+
+
+.checkItem{
+    cursor: pointer;    
+    background-color: white;
+    padding: 7px;
+    box-sizing: border-box;
+    border: 2px solid $danger;
+    border-radius: 100%;
+    width: 12.48px;
+    height: 14px;
+    margin-left: 20px;
+}
+
+.checkItem:checked + p{
+    text-decoration: line-through;
+    color: $gray300;
+}
