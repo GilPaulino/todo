@@ -13,9 +13,9 @@ $danger: #e25858;
 
 
 body{
-    height: 200px;
-    width: 1440px;
-    background: $gray700;
+    width: 100vw;   
+    height: 100vh;
+    background-image: linear-gradient(to bottom, $gray700 0, $gray700 30%, $gray600 30%);
     left: 0px;
     top: 0px;
     border-radius: 0px;   

@@ -1,7 +1,7 @@
 body {
-  height: 200px;
-  width: 1440px;
-  background: #0d0d0d;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #0d0d0d 0, #0d0d0d 30%, #1a1a1a 30%);
   left: 0px;
   top: 0px;
   border-radius: 0px;
