@@ -1,11 +1,13 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(to bottom, #0d0d0d 0, #0d0d0d 30%, #1a1a1a 30%);
+  background-image: linear-gradient(to bottom, #0d0d0d 0, #0d0d0d 16%, #1a1a1a 16%);
+  text-align: center;
   left: 0px;
   top: 0px;
   border-radius: 0px;
   font-family: "Inter", sans-serif;
+  overflow: hidden;
 }
 
 .container {
@@ -26,10 +28,6 @@ body {
   color: #5e60ce;
 }
 
-h1, p {
-  font-weight: bold;
-}
-
 img {
   width: 20px;
   height: 25px;
@@ -39,7 +37,13 @@ img, h1 {
   display: inline-block;
 }
 
+.formulario {
+  white-space: nowrap;
+}
+
 .nome {
+  width: 97.7%;
+  height: 30px;
   font-size: 16px;
   border: 2px solid #0d0d0d;
   border-radius: 5px;
@@ -56,9 +60,9 @@ img, h1 {
 }
 
 .cadastrar {
+  height: 46px;
   border-radius: 5px;
   font-weight: 500;
-  height: 100%;
   background-color: #1e6f9f;
   color: #f2f2f2;
   font-size: 14px;
@@ -67,35 +71,52 @@ img, h1 {
   cursor: pointer;
 }
 
-.plus {
-  color: #f2f2f2;
-  font-size: 14px;
-}
-
 .cadastrar:hover {
   background: #4ea8de;
 }
 
+.fa-solid {
+  color: #f2f2f2;
+}
+
+.contador {
+  width: 819px;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
 .tarefas-criadas {
+  text-align: left;
   color: #4ea8de;
-  float: left;
-  width: 54%;
+  display: inline-block;
+}
+
+.contador-tarefa {
+  color: #d9d9d9;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .concluidas {
+  text-align: right;
   color: #5e60ce;
   float: right;
-  width: 46%;
+  width: 73%;
+  display: inline-block;
+}
+
+.contador-concluidas {
+  color: #d9d9d9;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .lista {
-  font-family: "Inter";
-  padding: 10px 20px;
-  margin-top: 60px;
+  justify-content: center;
   border-radius: 5px;
   box-shadow: 0 5px 5px, #262626;
-  width: 100%;
-  color: black;
 }
 
 .tarefa {
@@ -103,7 +124,7 @@ img, h1 {
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
-  width: 736px;
+  width: 819px;
   height: 72px;
   margin-bottom: 12px;
   margin-top: 12px;
@@ -130,7 +151,7 @@ img, h1 {
   border-radius: 5px;
 }
 
-.checkItem {
+.checkbox {
   cursor: pointer;
   background-color: white;
   padding: 7px;
@@ -142,7 +163,7 @@ img, h1 {
   margin-left: 20px;
 }
 
-.checkItem:checked + p {
+.checkbox:checked + p {
   text-decoration: line-through;
   color: #808080;
 }/*# sourceMappingURL=syle.css.map */

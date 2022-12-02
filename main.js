@@ -18,7 +18,7 @@ form.addEventListener("submit", (evento) =>{
     if (existe){
         tarefas.id = existe.id
         itens[itens.findIndex(elemento => elemento.id === existe.id)] = tarefas
-    } else {
+        } else {
         tarefas.id = itens[itens.length -1] ? (itens[itens.length-1]).id + 1 : 0;
         criaTarefa(tarefas)
         itens.push(tarefas)        
@@ -42,30 +42,17 @@ function criaTarefa(item){
     deleteItem.classList.add('fa-regular')
     deleteItem.classList.add('fa-trash-can') 
 
-    const checked = document.getElementById('checkBox')
 
     lista.appendChild(novaTarefa)
-    novaTarefa.innerHTML = `<input type="checkbox" class="checkItem" id="checkBox">` 
-    //novaTarefa.appendChild(marked(checked))    
+    novaTarefa.innerHTML = `<input type="checkbox" class="checkbox" id="checkbox">`
     novaTarefa.appendChild(textoTarefa)
     novaTarefa.appendChild(botaoDeleta(deleteItem))         
 }
 
-/*function checkItem(id) {
-    const checked = document.getElementById('checkBox')
 
-    checked.addEventListener("click", function(){
-        marked(this.parentNode, id)
-    })
-    return checked
-}
+//checkbox.checked = false
 
-function marked(tag,id){
-    tag.remove()
-    itens.status(itens.findIndex(elemento => elemento.id ===id), 1)
-
-    localStorage.setItem("itens", JSON.stringify(itens))
-}*/
+//console.log(checkbox)
 
 function botaoDeleta(id) {
     const deleteItem = document.createElement('i')
