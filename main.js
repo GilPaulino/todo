@@ -1,10 +1,15 @@
 const form = document.getElementById("nova-tarefa")
-const lista = document.getElementById("lista")
+const contador = document.getElementsByClassName('contador')
+const lista = document.getElementById("lista") 
 const itens = JSON.parse(localStorage.getItem("itens")) || []
 
-itens.forEach((elemento) => {
-    criaTarefa(elemento)
+
+
+itens.forEach((elemento) => {    
+    criaTarefa(elemento)          
 })
+
+
 
 form.addEventListener("submit", (evento) =>{
     evento.preventDefault()
@@ -27,7 +32,8 @@ form.addEventListener("submit", (evento) =>{
     localStorage.setItem("itens", JSON.stringify(itens))
 
     nome.value=""
-})
+}) 
+
 
 function criaTarefa(item){
     
@@ -46,13 +52,23 @@ function criaTarefa(item){
     lista.appendChild(novaTarefa)
     novaTarefa.innerHTML = `<input type="checkbox" class="checkbox" id="checkbox">`
     novaTarefa.appendChild(textoTarefa)
-    novaTarefa.appendChild(botaoDeleta(deleteItem))         
+    novaTarefa.appendChild(botaoDeleta(deleteItem))  
+    
 }
 
+/*function contadorTarefa(item) {
 
-//checkbox.checked = false
+    const quantidadeTarefa = document.getElementsByClassName('tarefa')
+    const quantidade = document.createElement('div')
+    quantidade.classList.add('contadorTarefa')
+    
+    quantidade.innerText = quantidadeTarefa.length
 
-//console.log(checkbox)
+    
+
+    contador.appendChild(quantidade)
+    
+} */
 
 function botaoDeleta(id) {
     const deleteItem = document.createElement('i')

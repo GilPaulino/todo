@@ -25,10 +25,10 @@ body{
 }
 
 .container {       
-    width: 50%;
+    width: 55%;
     height: 23rem;
     text-align: center;
-    display: block;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     min-width: 500px;
@@ -52,11 +52,14 @@ img, h1 {
 }
 
 .formulario{
+    width: 94%;
+    margin-top: 39px;
+    display: block;
     white-space: nowrap;
 }
 
 .nome{  
-    width: 97.7%;
+    width: 100%;
     height: 30px;
     font-size: 16px;
     border: 2px solid $gray700;
@@ -93,11 +96,13 @@ img, h1 {
 }
 
 .contador{
-    width: 819px;
+    width: 100%;
     margin-top: 60px;
     margin-bottom: 10px;
+    margin-left: 17px;
     display: flex;
     flex-direction: row;
+    white-space: nowrap;
 }
 
 .tarefas-criadas{
@@ -105,7 +110,7 @@ img, h1 {
     color: $blue;      
     display: inline-block;
 }
-.contador-tarefa{    
+.contadorTarefa{    
     color: $gray200;
     display: inline-block;
     margin-left: 10px;           
@@ -127,6 +132,7 @@ img, h1 {
 }
 
 .lista{   
+    width: 100%;
     justify-content: center;  
     border-radius: 5px;
     box-shadow: 0 5px 5px, $gray500;          
@@ -137,8 +143,9 @@ img, h1 {
     justify-content: space-between;
     align-items: center;
     border-radius: 8px;
-    width: 819px;
+    width: 100%;
     height: 72px;
+    margin-left: 17px;
     margin-bottom: 12px;
     margin-top: 12px;
     background-color: $gray500;
