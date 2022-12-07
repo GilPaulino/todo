@@ -15,13 +15,14 @@ $danger: #e25858;
 body{
     width: 100vw;   
     height: 100vh;
-    background-image: linear-gradient(to bottom, $gray700 0, $gray700 16%, $gray600 16%);
+    background-image: linear-gradient(to bottom, $gray700 0, $gray700 19%, $gray600 19%);
     text-align:center;
     left: 0px;
     top: 0px;
     border-radius: 0px;   
     font-family: "Inter", sans-serif;
     overflow: hidden;
+    
 }
 
 .container {       
@@ -34,6 +35,16 @@ body{
     min-width: 500px;
 }
 
+.titulo, .titulo-2{
+    
+    height: 48px;    
+    top: 72px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
+}
+
 .titulo{
     color: $blue;    
 }
@@ -43,8 +54,9 @@ body{
 }
 
 img {
-    width: 20px;
-    height: 25px;
+    
+    width: 21.99px;
+    height: 30px;
 }
 
 img, h1 {
@@ -58,13 +70,17 @@ img, h1 {
     white-space: nowrap;
 }
 
-.nome{   
-    width: 100%;
-    height: 30px;
+.nome{     
+    font-style: normal;
+    font-weight: 400;
     font-size: 16px;
-    border: 2px solid $gray700;
-    border-radius: 5px;
-    padding: 8px;    
+    line-height: 140%;
+    width: 96%;
+    height: 30px;
+    border: 1px solid $gray700;
+    border-radius: 8px;
+    padding: 16px; 
+    gap: 8px;   
     font-weight: 500;
     background-color: $gray500;
     color: $gray300;
@@ -77,8 +93,11 @@ img, h1 {
 }
 
 .cadastrar { 
-    height: 46px; 
-    border-radius: 5px;
+    padding: 16px;
+    gap: 8px;
+    width: 90px;
+    height: 63px; 
+    border-radius: 8px;
     font-weight: 500;    
     background-color: $blue-dark;
     color: $gray100;   
@@ -96,6 +115,8 @@ img, h1 {
 }
 
 .contador{
+
+    font-size: 16px;
     width: 100%;
     margin-top: 60px;
     margin-bottom: 10px;
@@ -110,15 +131,19 @@ img, h1 {
     color: $blue;      
     display: inline-block;
 }
-.contadorTarefa, .contadorCriada{    
+.contadorTarefa, .contadorCriada, .contador-concluidas{ 
+    background: $gray400;      
     color: $gray200;
     display: inline-block;
-    margin-left: 10px;           
+    margin-left: 10px;
+    padding: 2px 8px;
+    gap: 10px;
+    border-radius: 999px;     
 }
 
 .concluidas{
     text-align: right;
-    color:$purple-dark;
+    color:$purple;
     float: right;
     width: 73%;
     display: inline-block;   
@@ -131,60 +156,133 @@ img, h1 {
     
 }
 
-.lista{   
+.lista{     
     width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
     justify-content: center;  
     border-radius: 5px;
     box-shadow: 0 5px 5px, $gray500;          
 }
+::-webkit-scrollbar{
+    background-color: $gray500;
+    width: 12px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: $purple-dark;
+    border-radius: 10px;
+}
 
 .tarefa{
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     border-radius: 8px;
-    width: 100%;
-    height: 72px;
+    width: 95%;
+    height:72px;
+    padding: 11px;
     margin-left: 17px;
     margin-bottom: 12px;
     margin-top: 12px;
-    background-color: $gray500;
+    background: $gray500;    
 }
 
 .tarefa p{    
     color: $gray100;
     font-size: 14px;
-
+    line-height: 19.6px;
+    
 }
 
 .tarefa i{
-    cursor: pointer;
-    background-color: $gray500;
+    cursor: pointer;    
     color: $gray300;
     padding: 7px;  
     margin-right: 20px;      
 }
 
 .tarefa i:hover{
-    background-color: $gray600;
+    background-color: $gray400;
     color: $danger;
     padding: 7px;
-    border-radius: 5px;    
+    border-radius: 4px;    
+}
+.containerCheck{
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
 }
 
-.checkbox{
-    cursor: pointer;    
-    background-color: white;
-    padding: 7px;
-    box-sizing: border-box;
-    border: 2px solid $danger;
-    border-radius: 100%;
-    width: 12.48px;
-    height: 14px;
-    margin-left: 20px;
+.containerCheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
 
+.check{
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    border: 1px solid $blue;
+    background: $gray400;
+    position: absolute;
+}
+
+.containerCheck input:checked ~ .check{
+    background: $purple-dark
+}
+
+.container .check:after{
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 9px;
+    border: solid $gray100;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.check:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.containerCheck input:checked ~.check:after{
+    display: block;
+}
 .checkbox:checked + p{
     text-decoration: line-through;
     color: $gray300;
 }
+
+.todas, .feitas, .ativas{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;    
+    color: $gray300;
+    cursor: pointer;
+}
+
+.todas:hover, .feitas:hover, .ativas:hover{
+    color: $blue;
+    cursor: pointer;
+}
+
+.todas:active, .feitas:active, .ativas:active{
+    color: $blue;
+    cursor: pointer;
+}
+

@@ -1,5 +1,6 @@
 const form = document.getElementById("nova-tarefa");
 const contador = document.getElementById("contadorTarefa");
+const contadorConcluidas= document.getElementById('contador-concluidas')
 const contadorC = document.getElementById("contadorCriada");
 const checkbox = document.getElementById("checkbox");
 const lista = document.getElementById("lista");
@@ -10,12 +11,19 @@ itens.forEach((elemento) => {
 });
 
 var btn = document.querySelector("#refresh");
-btn.addEventListener("click", function () {
-  location.reload();
+btn.addEventListener("click", function() {
+    
+    location.reload();
 });
 
 form.addEventListener("submit", (evento) => {
   evento.preventDefault();
+  
+  let quantidadeItem = itens.length;
+  const quantidade = quantidadeItem;
+  contador.innerText = quantidade;
+  contadorC.innerHTML = quantidade;
+
   const nome = evento.target.elements["nome"];
 
   const existe = itens.find((elemento) => elemento.nome === nome.value);
@@ -42,6 +50,7 @@ function criaTarefa(item) {
   novaTarefa.classList.add("tarefa");
 
   const textoTarefa = document.createElement("p");
+  textoTarefa.classList.add('paragrafo')
   textoTarefa.innerHTML = item.nome;
   textoTarefa.dataset.id = item.id;
 
@@ -49,22 +58,26 @@ function criaTarefa(item) {
   deleteItem.classList.add("fa-regular");
   deleteItem.classList.add("fa-trash-can");
 
+  
+
   lista.appendChild(novaTarefa);
-  novaTarefa.innerHTML = `<input type="checkbox" class="checkbox" id="checkbox">`;
+  novaTarefa.innerHTML = `<label class="containerCheck"><input type="checkbox" class="checkbox" id="checkbox"><span class="check"></span></label>`;
   novaTarefa.appendChild(textoTarefa);
   novaTarefa.appendChild(botaoDeleta(deleteItem));
 
   let quantidadeItem = itens.length;
   const quantidade = quantidadeItem;
-    contador.innerText = quantidade;
+  contador.innerText = quantidade;
+  contadorC.innerHTML = quantidade;
+
 
   localStorage.setItem("itens", JSON.stringify(itens));
 }
 
 function checkItem(id) {
   checkbox.addEventListener("click", function () {
-    checkedItem(this.parentNode, id);
-    
+    checkedItem(this.parentNode, id).checked;
+
   });
 
   return checkbox;
@@ -86,6 +99,7 @@ function botaoDeleta(id) {
     let quantidadeItem = itens.length;
     const quantidade = quantidadeItem;
     contador.innerText = quantidade;
+    contadorC.innerHTML = quantidade;
   });
 
   return deleteItem;
@@ -93,10 +107,7 @@ function botaoDeleta(id) {
 
 function deletaTarefa(tag, id) {
   tag.remove();
-  itens.splice(
-    itens.findIndex((elemento) => elemento.id === id),
-    1
-  );
+  itens.splice(itens.findIndex((elemento) => elemento.id === id),1);
 
   localStorage.setItem("itens", JSON.stringify(itens));
 }
