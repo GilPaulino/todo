@@ -3,26 +3,26 @@ const contador = document.getElementById("contadorTarefa");
 const contadorConcluidas= document.getElementById('contador-concluidas')
 const contadorC = document.getElementById("contadorCriada");
 const checkbox = document.getElementById("checkbox");
+const containerTarefa = document.getElementById('containerTarefas');
+let listaVazia = document.getElementById('listaVazia');
 const lista = document.getElementById("lista");
+let filtro = document.getElementById('filtro');
+var tarefa = document.querySelectorAll('.tarefa');
 const itens = JSON.parse(localStorage.getItem("itens")) || [];
+
 
 itens.forEach((elemento) => {
   criaTarefa(elemento);
 });
 
-var btn = document.querySelector("#refresh");
-btn.addEventListener("click", function() {
-    
-    location.reload();
-});
+
 
 form.addEventListener("submit", (evento) => {
   evento.preventDefault();
+  location.reload(); 
+
   
-  let quantidadeItem = itens.length;
-  const quantidade = quantidadeItem;
-  contador.innerText = quantidade;
-  contadorC.innerHTML = quantidade;
+  
 
   const nome = evento.target.elements["nome"];
 
@@ -45,7 +45,19 @@ form.addEventListener("submit", (evento) => {
   nome.value = "";
 });
 
-function criaTarefa(item) {
+function criaTarefa(item) { 
+
+  
+
+  if(tarefa.lenght === 1){
+    listaVazia.style.display = 'block'
+    filtro.style.display = 'none'
+  }else{
+    filtro.style.display = 'block'
+    listaVazia.style.display = 'none'
+  }
+  
+ 
   const novaTarefa = document.createElement("div");
   novaTarefa.classList.add("tarefa");
 
@@ -58,26 +70,41 @@ function criaTarefa(item) {
   deleteItem.classList.add("fa-regular");
   deleteItem.classList.add("fa-trash-can");
 
-  
-
-  lista.appendChild(novaTarefa);
-  novaTarefa.innerHTML = `<label class="containerCheck"><input type="checkbox" class="checkbox" id="checkbox"><span class="check"></span></label>`;
+  containerTarefa.appendChild(lista);
+  lista.appendChild(novaTarefa);  
+    
+  novaTarefa.innerHTML = `<label class="containerCheck"><input type="checkbox" class="checkbox" id="checkbox" value=""><span class="check"></span></label>`;
   novaTarefa.appendChild(textoTarefa);
   novaTarefa.appendChild(botaoDeleta(deleteItem));
 
   let quantidadeItem = itens.length;
   const quantidade = quantidadeItem;
   contador.innerText = quantidade;
-  contadorC.innerHTML = quantidade;
+  contadorC.innerHTML = quantidade;  
 
 
   localStorage.setItem("itens", JSON.stringify(itens));
 }
 
+document.getElementsByClassName('paragrafo').style.textDecoration = "line-through";
+
+
+// const atualizarItem = (tag, id) =>{
+//   itens.status = itens.status ==="" ? 'checked' : '';
+//   location.reload();
+// }
+
+// 
+//  checkbox = (evento) => {
+//   const elemento = evento.target;
+//   if (elemento.type === 'checkbox'){
+//     atualizarItem (itens)
+//   }
+//  }
+
 function checkItem(id) {
   checkbox.addEventListener("click", function () {
     checkedItem(this.parentNode, id).checked;
-
   });
 
   return checkbox;
@@ -89,6 +116,7 @@ function checkedItem(tag, id) {
   localStorage.setItem("itens", JSON.stringify(itens));
 }
 
+
 function botaoDeleta(id) {
   const deleteItem = document.createElement("i");
   deleteItem.classList.add("fa-regular");
@@ -96,12 +124,15 @@ function botaoDeleta(id) {
 
   deleteItem.addEventListener("click", function () {
     deletaTarefa(this.parentNode, id);
+    location.reload(); 
+
     let quantidadeItem = itens.length;
     const quantidade = quantidadeItem;
     contador.innerText = quantidade;
     contadorC.innerHTML = quantidade;
+    
   });
-
+  
   return deleteItem;
 }
 

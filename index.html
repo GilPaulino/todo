@@ -31,7 +31,7 @@
             id="nome"
             placeholder="Adicione uma nova tarefa"
           />
-          <button id="refresh" class="cadastrar" type="submit">
+          <button id="refresh" class="cadastrar" type="submit" onclick="esconde(listaVazia)">
             Criar <i class="fa-solid fa-circle-plus"></i>
           </button>
         </form>
@@ -44,11 +44,28 @@
         </div>
 
         <div class="concluidas">
-          Concluídas<span class="contador-concluidas" id="contador-concluidas"></span class="de" id="de">de<span class="contadorCriada" id="contadorCriada"></span>
+          Concluídas<span class="contador-concluidas" id="contador-concluidas"></span> de<span class="contadorCriada" id="contadorCriada"></span>
 
         </div>
       </div>
-      <div class="lista" id="lista"></div>
+
+      <div class="containerTarefas" id="containerTarefas">
+
+        <div class="listaVazia" id="listaVazia"> <i class="fa-regular fa-clipboard"></i><p class="clipboardTexto">Você ainda não tem tarefas cadastradas</p><p class="clipboardCrie">Crie Tarefas e organize seus itens a fazer</p> </div>
+        
+        <div class="lista" id="lista"></div> 
+          
+        <div class="filtro" id="filtro">
+          <div class="todas" id="todas">Todas</div>
+          <div class="feitas" id="feitas">Concluídas</div>
+          <div class="ativas" id="ativas">Ativas</div>
+        </div>
+      
+      </div>
+
+      
+
+      
     </div>
 
     <script src="main.js"></script>
