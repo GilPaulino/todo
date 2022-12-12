@@ -245,6 +245,7 @@ img, h1 {
     padding: 7px;
     border-radius: 4px;    
 }
+
 .containerCheck{
     display: block;
     position: relative;
@@ -260,7 +261,8 @@ img, h1 {
     opacity: 0;    
 }
 
-.check{
+
+.check{     
     left: 0;
     top: 0;
     width: 18px;
@@ -271,20 +273,16 @@ img, h1 {
     position: absolute;
 }
 
-input[type=checkbox]:checked ~ .check{
-    background: $purple-dark    
+.checked{        
+    background: $purple-dark;
+    border: 2px solid $purple-dark;
 }
 
-input[type=checkbox]:checked ~ .check + .paragrafo{
-    text-decoration: line-through;
-    color: $gray300;
-}
-
-.container .check:after{
-    top: 2px;
-    left: 6px;
-    width: 5px;
-    height: 9px;
+.checked{
+    position: absolute;
+    top: 2px;    
+    width: 18px;
+    height: 18px;
     border: solid $gray100;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
@@ -292,16 +290,10 @@ input[type=checkbox]:checked ~ .check + .paragrafo{
     transform: rotate(45deg);
 }
 
-.check:after{
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.containerCheck input:checked ~.check:after{
-    display: block;    
-}
-
+// .paragrafo:checked {
+//     text-decoration: line-through;
+// }
+  
 .containerTarefas{
     display: flex;
     flex-direction: column;
@@ -336,4 +328,3 @@ input[type=checkbox]:checked ~ .check + .paragrafo{
     color: $blue;
     cursor: pointer;
 }
-

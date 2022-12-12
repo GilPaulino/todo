@@ -40,11 +40,11 @@
 
         <div class="tarefas-criadas" id="tarefas-criadas">
           Tarefas criadas
-          <strong class="contadorTarefa" id="contadorTarefa"></strong>
+          <strong class="contadorTarefa" id="contadorTarefa">0</strong>
         </div>
 
         <div class="concluidas">
-          Concluídas<span class="contador-concluidas" id="contador-concluidas"></span> de<span class="contadorCriada" id="contadorCriada"></span>
+          Concluídas<span class="contador-concluidas" id="contador-concluidas">0</span> de<span class="contadorCriada" id="contadorCriada">0</span>
 
         </div>
       </div>
@@ -56,9 +56,9 @@
         <div class="lista" id="lista"></div> 
           
         <div class="filtro" id="filtro">
-          <div class="todas" id="todas">Todas</div>
-          <div class="feitas" id="feitas">Concluídas</div>
-          <div class="ativas" id="ativas">Ativas</div>
+          <div class="todas" onclick="Filtro('todas')">Todas</div>
+          <div class="feitas" onclick="Filtro('feitas')">Concluídas</div>
+          <div class="ativas" onclick="Filtro('ativas')">Ativas</div>
         </div>
       
       </div>
