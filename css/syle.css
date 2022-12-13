@@ -1,7 +1,9 @@
 body {
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(to bottom, #0d0d0d 0, #0d0d0d 19%, #1a1a1a 19%);
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #0d0d0d 0, #0d0d0d 24%, #1a1a1a 24%);
+  background-repeat: no-repeat;
+  background-color: #1a1a1a;
   text-align: center;
   left: 0px;
   top: 0px;
@@ -11,6 +13,7 @@ body {
 }
 
 .container {
+  max-width: 1200px;
   width: 45%;
   height: 23rem;
   text-align: center;
@@ -20,40 +23,32 @@ body {
   min-width: 500px;
 }
 
-.titulo, .titulo-2 {
-  height: 48px;
-  top: 72px;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 40px;
-  line-height: 48px;
-}
-
-.titulo {
-  color: #4ea8de;
-}
-
-.titulo-2 {
-  color: #5e60ce;
-}
-
-img {
+.todo img {
   width: 21.99px;
   height: 30px;
 }
-
-img, h1 {
-  display: inline-block;
+.todo .titulo {
+  font-style: normal;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 48px;
+  display: inline-flex;
+}
+.todo .titulo .to {
+  color: #4ea8de;
+}
+.todo .titulo .do {
+  color: #5e60ce;
 }
 
-.formulario {
-  width: 900px;
-  margin-top: 39px;
-  display: block;
+.descricaoTarefa {
+  margin-top: -50px;
+  display: flex;
   white-space: nowrap;
+  min-width: 750px;
+  text-align: center;
 }
-
-.nome {
+.descricaoTarefa .descricao {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -68,18 +63,17 @@ img, h1 {
   background-color: #262626;
   color: #808080;
 }
-
-.nome:focus {
+.descricaoTarefa .descricao:focus {
   outline: none;
-  border-color: #333333;
-  background: #333333;
+  border-color: #5e60ce;
+  background: #262626;
 }
-
-.cadastrar {
+.descricaoTarefa .criar {
+  margin-left: 10px;
   padding: 16px;
   gap: 8px;
   width: 90px;
-  height: 63px;
+  height: 62px;
   border-radius: 8px;
   font-weight: 500;
   background-color: #1e6f9f;
@@ -89,83 +83,62 @@ img, h1 {
   padding: 8px;
   cursor: pointer;
 }
-
-.cadastrar:hover {
+.descricaoTarefa .criar .fa-solid {
+  color: #f2f2f2;
+}
+.descricaoTarefa .criar:hover {
   background: #4ea8de;
 }
 
-.fa-solid {
-  color: #f2f2f2;
-}
-
-.contador {
-  font-size: 16px;
-  width: 900px;
-  margin-top: 50px;
+.containerContador {
+  font-size: 14px;
+  width: 732.59px;
+  margin-top: 40px;
   margin-bottom: 10px;
-  margin-left: 17px;
   display: flex;
+  min-width: 750px;
   flex-direction: row;
   white-space: nowrap;
 }
-
-.tarefas-criadas {
+.containerContador .tarefasCriadas {
   text-align: left;
   color: #4ea8de;
-  margin-left: 50px;
   display: inline-block;
   height: 17px;
 }
-
-.contadorTarefa, .contadorCriada, .contador-concluidas {
-  background: #333333;
-  color: #d9d9d9;
-  display: inline-block;
-  margin-left: 10px;
-  padding: 2px 8px;
-  gap: 10px;
-  border-radius: 999px;
-}
-
-.concluidas {
-  margin-left: 370px;
+.containerContador .concluidas {
+  margin-left: 390px;
   color: #8284fa;
   height: 17px;
   width: 73%;
 }
-
-.contador-concluidas {
+.containerContador .contador {
+  background: #333333;
   color: #d9d9d9;
   display: inline-block;
-  margin-left: 10px;
+  padding: 2px 8px;
+  gap: 10px;
+  border-radius: 999px;
+  font-size: 12px;
 }
 
-.listaVazia {
-  width: 900px;
-  height: 2px;
-  display: block;
-}
-
-.lista {
-  order: 1;
-  content: "";
-  width: 900px;
+.containerTarefas {
+  margin-top: 30px;
+  width: 732.59px;
   height: 400px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  justify-content: center;
-  border-radius: 5px;
-  box-shadow: 0 5px 5px, #262626;
+  display: flex;
+  flex-direction: column;
 }
-
-.fa-clipboard {
+.containerTarefas .listaVazia {
+  display: none;
+}
+.containerTarefas .listaVazia .fa-clipboard {
   color: #333333;
   margin-top: 17%;
   margin-right: center;
   font-size: 56px;
 }
-
-.clipboardTexto {
+.containerTarefas .listaVazia .texto {
   font-weight: 700;
   font-style: bold;
   font-size: 16px;
@@ -173,8 +146,7 @@ img, h1 {
   color: #808080;
   align-self: stretch;
 }
-
-.clipboardCrie {
+.containerTarefas .listaVazia .texto2 {
   margin-top: -15px;
   font-weight: 400;
   font-size: 16px;
@@ -182,72 +154,55 @@ img, h1 {
   color: #808080;
   align-self: stretch;
 }
-
-::-webkit-scrollbar {
+.containerTarefas .tarefas {
+  order: 1;
+  content: "";
+  display: flex;
+  width: 732.5px;
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px, #262626;
+}
+.containerTarefas .tarefas::-webkit-scrollbar {
   background-color: #262626;
   width: 12px;
   border-radius: 10px;
 }
-
-::-webkit-scrollbar-thumb {
+.containerTarefas .tarefas::-webkit-scrollbar-thumb {
   background: #5e60ce;
   border-radius: 10px;
 }
-
-.tarefa {
-  display: flex;
+.containerTarefas .tarefas .tarefa {
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
   border: 1px solid #333333;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
-  width: 700px;
+  width: 638px;
   height: 72px;
   padding: 11px;
-  margin-left: 85px;
-  margin-bottom: 12px;
-  margin-top: 12px;
+  margin-bottom: 5px;
+  margin-top: 5px;
   background: #262626;
 }
-
-.tarefa p {
-  color: #f2f2f2;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 140%;
-}
-
-.tarefa i {
-  cursor: pointer;
-  color: #808080;
-  padding: 7px;
-  margin-right: 20px;
-}
-
-.tarefa i:hover {
-  background-color: #333333;
-  color: #e25858;
-  padding: 7px;
-  border-radius: 4px;
-}
-
-.containerCheck {
+.containerTarefas .tarefas .tarefa .containerVerificacao {
   display: block;
   position: relative;
-  padding-left: 45px;
   margin-left: 20px;
-  margin-bottom: 19px;
+  padding-left: 45px;
   cursor: pointer;
   font-size: 22px;
+  margin-bottom: 19px;
 }
-
-.containerCheck input {
+.containerTarefas .tarefas .tarefa .containerVerificacao input {
   position: absolute;
   opacity: 0;
 }
-
-.check {
+.containerTarefas .tarefas .tarefa .containerVerificacao .verifica {
   left: 0;
   top: 0;
   width: 18px;
@@ -257,52 +212,70 @@ img, h1 {
   background: #333333;
   position: absolute;
 }
-
-.checked {
-  background: #5e60ce;
-  border: 2px solid #5e60ce;
+.containerTarefas .tarefas .tarefa .containerVerificacao .verifica:hover {
+  border: 2px solid #1e6f9f;
+  opacity: 0.8;
 }
-
-.checked {
+.containerTarefas .tarefas .tarefa .containerVerificacao .verifica:after {
+  content: "";
   position: absolute;
+  display: none;
   top: 2px;
-  width: 18px;
-  height: 18px;
+  left: 6px;
+  width: 4px;
+  height: 9px;
   border: solid #f2f2f2;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-
-.containerTarefas {
-  display: flex;
-  flex-direction: column;
+.containerTarefas .tarefas .tarefa .containerVerificacao .verifica:after:hover {
+  border: 2px solid #8284fa;
 }
-
-.filtro {
+.containerTarefas .tarefas .tarefa .containerVerificacao input:checked ~ .verifica {
+  background: #5e60ce;
+  border: 2px solid #5e60ce;
+}
+.containerTarefas .tarefas .tarefa .containerVerificacao input:checked ~ .verifica:after {
+  display: block;
+}
+.containerTarefas .tarefas .tarefa .descricaoTarefa {
+  color: #f2f2f2;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+.containerTarefas .tarefas .tarefa i {
+  cursor: pointer;
+  color: #808080;
+  padding: 7px;
+  margin-right: 20px;
+}
+.containerTarefas .tarefas .tarefa i:hover {
+  background-color: #333333;
+  color: #e25858;
+  padding: 7px;
+  border-radius: 4px;
+}
+.containerTarefas .containerFiltro {
   display: none;
   order: 2;
   margin-top: 25px;
-  width: 900px;
+  width: 732.5px;
 }
-
-.todas, .feitas, .ativas {
+.containerTarefas .containerFiltro .filtro {
   display: inline-block;
   font-style: normal;
-  font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   color: #808080;
   cursor: pointer;
   text-align: center;
   margin: 10px;
+  font-weight: 700;
 }
-
-.todas:hover, .feitas:hover, .ativas:hover {
-  color: #4ea8de;
-  cursor: pointer;
-}
-
-.todas:active, .feitas:active, .ativas:active {
+.containerTarefas .containerFiltro .filtro:hover,
+.containerTarefas .containerFiltro .filtro :active {
   color: #4ea8de;
   cursor: pointer;
 }/*# sourceMappingURL=syle.css.map */

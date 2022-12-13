@@ -13,54 +13,76 @@
       src="https://kit.fontawesome.com/90978fbe58.js"
       crossorigin="anonymous"
     ></script>
+    <script src="main.js" defer></script>
     <title>ToDo List</title>
   </head>
   <body>
+
     <div class="container">
-      <img src="img/icone.png.png" alt="Icon" />
-      <h1 class="titulo">
-        to
-        <h1 class="titulo-2">do</h1>
-      </h1>
 
-      <div class="formulario">
-        <form action="" class="head" id="nova-tarefa">
-          <input
-            type="text"
-            class="nome"
-            id="nome"
-            placeholder="Adicione uma nova tarefa"
-          />
-          <button id="refresh" class="cadastrar" type="submit" onclick="esconde(listaVazia)">
+      <div class="todo">
+
+         <img src="img/icone.png.png" alt="Icon"/>
+
+         <h1 class="titulo"><p class="to">to</p> <p class="do">do</p></h1>
+         
+      </div>
+
+      <div action="" id="descricaoTarefa" class="descricaoTarefa"> 
+
+          <input id="descricao" class="descricao" type="text" placeholder="Adicione uma nova tarefa"/>
+
+          <button id="criar" class="criar" type="submit">
             Criar <i class="fa-solid fa-circle-plus"></i>
-          </button>
-        </form>
-      </div>
-      <div class="contador" id="contador">
+          </button>        
 
-        <div class="tarefas-criadas" id="tarefas-criadas">
-          Tarefas criadas
-          <strong class="contadorTarefa" id="contadorTarefa">0</strong>
-        </div>
-
-        <div class="concluidas">
-          Concluídas<span class="contador-concluidas" id="contador-concluidas">0</span> de<span class="contadorCriada" id="contadorCriada">0</span>
-
-        </div>
       </div>
 
-      <div class="containerTarefas" id="containerTarefas">
+      <div id="containerContador" class="containerContador" >
 
-        <div class="listaVazia" id="listaVazia"> <i class="fa-regular fa-clipboard"></i><p class="clipboardTexto">Você ainda não tem tarefas cadastradas</p><p class="clipboardCrie">Crie Tarefas e organize seus itens a fazer</p> </div>
+        <div id="tarefasCriadas" class="tarefasCriadas">Tarefas criadas          
+          <strong id="quantidadeTarefa" class="contador">0</strong>
+        </div>
+
+        <div id="concluidas" class="concluidas">Concluídas  
+          <strong id="quantidadeConcluida" class="contador">0</strong>
+        de
+          <strong id="quantidadeTarefa" class="contador">0</strong>
+        </div>
+
+      </div>
+
+      <div id="containerTarefas" class="containerTarefas" >
+
+        <div id="listaVazia" class="listaVazia">
+          <i class="fa-regular fa-clipboard"></i>
+          <p class="texto">Você ainda não tem tarefas cadastradas</p>
+          <p class="texto2">Crie Tarefas e organize seus itens a fazer</p> 
+        </div>
         
-        <div class="lista" id="lista"></div> 
+        <div id="tarefas"class="tarefas">
+
+        <!-- <div class="tarefa">
+            <label class="containerVerificacao">
+            <input type="checkbox">
+            <span class="verifica"></span>
+            </label>
+            <p class="descricaoTarefa">Tarefa adicionada</p>
+            <i class="fa-regular fa-trash-can"></i>
+        </div>  -->
           
-        <div class="filtro" id="filtro">
-          <div class="todas" onclick="Filtro('todas')">Todas</div>
-          <div class="feitas" onclick="Filtro('feitas')">Concluídas</div>
-          <div class="ativas" onclick="Filtro('ativas')">Ativas</div>
+        </div>                 
+    
+        
+          
+        <div class="containerFiltro" id="containerFiltro">
+
+          <div class="filtro" onclick="Filtrar('todas')">Todas</div>
+          <div class="filtro" onclick="Filtrar('feitas')">Concluídas</div>
+          <div class="filtro" onclick="Filtrar('ativas')">Ativas</div>
         </div>
       
+
       </div>
 
       
@@ -68,6 +90,6 @@
       
     </div>
 
-    <script src="main.js"></script>
+    
   </body>
 </html>
