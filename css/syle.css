@@ -41,14 +41,14 @@ body {
   color: #5e60ce;
 }
 
-.descricaoTarefa {
+.containerDescricao {
   margin-top: -50px;
   display: flex;
   white-space: nowrap;
   min-width: 750px;
   text-align: center;
 }
-.descricaoTarefa .descricao {
+.containerDescricao .descricao {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -63,12 +63,12 @@ body {
   background-color: #262626;
   color: #808080;
 }
-.descricaoTarefa .descricao:focus {
+.containerDescricao .descricao:focus {
   outline: none;
   border-color: #5e60ce;
   background: #262626;
 }
-.descricaoTarefa .criar {
+.containerDescricao .criar {
   margin-left: 10px;
   padding: 16px;
   gap: 8px;
@@ -83,10 +83,10 @@ body {
   padding: 8px;
   cursor: pointer;
 }
-.descricaoTarefa .criar .fa-solid {
+.containerDescricao .criar .fa-solid {
   color: #f2f2f2;
 }
-.descricaoTarefa .criar:hover {
+.containerDescricao .criar:hover {
   background: #4ea8de;
 }
 
@@ -157,7 +157,7 @@ body {
 .containerTarefas .tarefas {
   order: 1;
   content: "";
-  display: flex;
+  display: block;
   width: 732.5px;
   height: 400px;
   overflow-y: auto;
