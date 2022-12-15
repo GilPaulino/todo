@@ -15,7 +15,7 @@ $danger: #e25858;
 body {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, $gray700 0, $gray700 24%, $gray600 24%);    
+    background-image: linear-gradient(to bottom, $gray700 0, $gray700 45%, $gray600 45%);    
     background-repeat: no-repeat;
     background-color: $gray600;
     text-align: center;
@@ -37,11 +37,10 @@ body {
     min-width: 500px;
 }
 
-.todo {
+.todo {    
     img {
         width: 21.99px;
         height: 30px;
-
     }
 
     .titulo {
@@ -63,7 +62,7 @@ body {
 
 .containerDescricao {
     margin-top: -50px;
-    display: flex;
+    display: block;
     white-space: nowrap;
     min-width: 750px;
     text-align: center;
@@ -123,6 +122,7 @@ body {
     width: 732.59px;
     margin-top: 40px;
     margin-bottom: 10px;
+    margin-left: 5%;
     display: flex;
     min-width: 750px;
     flex-direction: row;
@@ -154,14 +154,15 @@ body {
 }
 
 .containerTarefas {
-    margin-top: 30px;
+    
     width: 732.59px;
     height: 400px;
-    display: flex;
+    display: table;
     flex-direction: column;
 
     .listaVazia {
-        display: none;
+        order: 1;
+        display: block;
 
         .fa-clipboard {
             color: $gray400;
@@ -173,10 +174,8 @@ body {
         .texto {
             font-weight: 700;
             font-style: bold;
-            font-size: 16px;
-            line-height: 140%;
-            color: $gray300;
-            align-self: stretch;
+            font-size: 16px;            
+            color: $gray300;            
         }
 
         .texto2 {
@@ -184,8 +183,7 @@ body {
             font-weight: 400;
             font-size: 16px;
             line-height: 140%;
-            color: $gray300;
-            align-self: stretch;
+            color: $gray300;            
         }
     }
 
@@ -195,6 +193,7 @@ body {
         display: block;
         width: 732.50px;
         height: 400px;
+        margin-left: 2%;
         overflow-y: auto;
         overflow-x: hidden;
         justify-content: center;
@@ -213,6 +212,7 @@ body {
         }
 
         .tarefa {
+            order: 1;
             display: inline-flex;
             justify-content: space-between;
             align-items: center;
@@ -220,6 +220,7 @@ body {
             border: 1px solid $gray400;
             box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
             width: 638px;
+            margin-left: center;
             height: 72px;
             padding: 11px;
             margin-bottom: 5px;
@@ -294,7 +295,7 @@ body {
                 line-height: 140%;
             }
 
-            i {
+            .fa-regular{
                 cursor: pointer;
                 color: $gray300;
                 padding: 7px;
@@ -314,6 +315,7 @@ body {
     .containerFiltro {
         display: none;
         order: 2;
+        margin-left: 5%;
         margin-top: 25px;
         width: 732.50px;
     
