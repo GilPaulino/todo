@@ -246,13 +246,13 @@ body {
   font-size: 14px;
   line-height: 140%;
 }
-.containerTarefas .tarefas .tarefa .fa-regular {
+.containerTarefas .tarefas .tarefa i {
   cursor: pointer;
   color: #808080;
   padding: 7px;
   margin-right: 20px;
 }
-.containerTarefas .tarefas .tarefa .fa-regular:hover {
+.containerTarefas .tarefas .tarefa i:hover {
   background-color: #333333;
   color: #e25858;
   padding: 7px;
